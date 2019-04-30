@@ -1,0 +1,15 @@
+version: '3'
+services:
+  heritrix:
+    image: ukwa/heritrix-worker
+    hostname: wa-heritrix
+    container_name: wa_heritrix
+    ports:
+      - "8443:8443"
+    environment:
+      HERITRIX_USER: admin
+      HERITRIX_PASSWORD: admin
+    volumes:
+      - ./jobs:/jobs
+volumes:
+  jobs:
